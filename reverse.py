@@ -17,6 +17,8 @@ payload = {'token':tokenID}
 r = requests.post(host_url, data=payload)
 string = r.text
 reverse_string = ""
+
+#builds string backwards by continuously appending new characters to the front, making the first character last and so on.
 for char in string:
     reverse_string = char + reverse_string
 
