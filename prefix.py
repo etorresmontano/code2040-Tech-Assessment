@@ -23,13 +23,11 @@ prefix = dictionary['prefix']
 return_array = []
 
 for string in dictionary['array']:
+    #returns index of first occurence of prefix, or -1 if not found. If it equals 0, then it is a prefix and is ignored
     if(string.find(prefix) != 0):
         return_array.append(str(string))
-    print string
-print return_array
-print r
+
 return_payload = {'token':tokenID, 'array':return_array}       
-print json.dumps(return_payload)
 headers = {'content-type': 'application/json'}
 
 #expected output is a string array, not list. Need to convert from python list to json object and changed request header.
